@@ -1,6 +1,6 @@
-# Aura Health AI
+# AuraHealth AI
 
-Aura Health AI is an intelligent web application designed to provide users with personalized diet and workout plans, leveraging the power of AI to help them achieve their health and fitness goals. Users can input their detailed profile information, generate tailored plans, track their progress over time, and benefit from AI-driven analysis and encouragement.
+AuraHealth AI is an intelligent web application designed to provide users with personalized diet and workout plans, leveraging the power of AI to help them achieve their health and fitness goals. Users can input their detailed profile information, generate tailored plans, track their progress over time, and benefit from AI-driven analysis and encouragement.
 
 ## ✨ Features
 
