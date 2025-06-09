@@ -1,26 +1,118 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: 190 67% 93%; /* #E0F7FA - Very Light Cyan */
+    --foreground: 200 25% 15%; /* Dark Desaturated Blue/Gray for text */
+
+    --card: 0 0% 100%; /* White cards */
+    --card-foreground: 200 25% 15%;
+
+    --popover: 0 0% 100%; /* White popovers */
+    --popover-foreground: 200 25% 15%;
+
+    --primary: 187 70% 50%; /* #26C6DA - Darker Cyan */
+    --primary-foreground: 0 0% 100%; /* White text on primary */
+
+    --secondary: 186 64% 71%; /* #80DEEA - Lighter Cyan */
+    --secondary-foreground: 187 70% 25%; /* Darker cyan for text on secondary */
+
+    --muted: 187 56% 82%; /* #B2EBF2 - Light Cyan */
+    --muted-foreground: 187 40% 50%; /* Muted text color */
+
+    --accent: 186 70% 62%; /* #4DD0E1 - Medium Cyan */
+    --accent-foreground: 0 0% 100%; /* White text on accent */
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 187 50% 80%; /* Subtle border color based on theme */
+    --input: 0 0% 100%; /* White input fields */
+    --ring: 187 70% 50%; /* Primary color for focus rings */
+
+    --radius: 0.5rem;
+
+    /* Sidebar specific colors */
+    --sidebar-background: 0 0% 100%; /* White sidebar */
+    --sidebar-foreground: 200 25% 15%; /* Dark text for sidebar */
+    --sidebar-primary: 187 70% 50%; /* Primary color for active/selected items */
+    --sidebar-primary-foreground: 0 0% 100%; /* White text on sidebar primary */
+    --sidebar-accent: 187 56% 88%; /* Lighter cyan for hover - from #B2EBF2, lightened */
+    --sidebar-accent-foreground: 187 70% 30%; /* Darker cyan text on sidebar accent */
+    --sidebar-border: 190 50% 85%;
+    --sidebar-ring: 187 70% 50%;
+
+    --chart-1: 187 70% 50%; /* Primary */
+    --chart-2: 186 70% 62%; /* Accent */
+    --chart-3: 187 60% 55%;
+    --chart-4: 186 60% 65%;
+    --chart-5: 190 50% 60%;
+  }
+
+  .dark {
+    --background: 195 47% 8%; /* Dark Desaturated Cyan/Blue */
+    --foreground: 190 60% 88%; /* Light Cyan text */
+
+    --card: 195 45% 13%; /* Slightly lighter dark cyan/blue */
+    --card-foreground: 190 60% 88%;
+
+    --popover: 195 45% 13%;
+    --popover-foreground: 190 60% 88%;
+
+    --primary: 186 70% 62%; /* #4DD0E1 - Brighter for dark mode */
+    --primary-foreground: 195 47% 10%; /* Dark text on primary */
+
+    --secondary: 190 47% 22%; /* Darker version of primary for dark mode */
+    --secondary-foreground: 187 56% 82%; /* #B2EBF2 - Lighter text */
+
+    --muted: 193 45% 18%; /* Dark muted color */
+    --muted-foreground: 186 60% 70%; /* Lighter muted text */
+
+    --accent: 187 70% 50%; /* #26C6DA - Remains prominent */
+    --accent-foreground: 195 47% 10%; /* Dark text on accent */
+
+    --destructive: 0 62.8% 30.6%; /* Standard dark destructive */
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 192 45% 24%; /* Dark border */
+    --input: 194 45% 16%; /* Dark input background */
+    --ring: 186 70% 62%; /* Primary color for focus rings */
+
+    /* Sidebar specific colors - Dark mode */
+    --sidebar-background: 195 47% 10%; /* Slightly darker than main dark bg */
+    --sidebar-foreground: 190 60% 88%; /* Light text for sidebar */
+    --sidebar-primary: 186 70% 62%; /* Primary color for active/selected items */
+    --sidebar-primary-foreground: 195 47% 8%; /* Dark text on sidebar primary */
+    --sidebar-accent: 187 70% 40%; /* Darker primary for hover */
+    --sidebar-accent-foreground: 190 60% 90%; /* Light text on sidebar accent */
+    --sidebar-border: 192 45% 28%;
+    --sidebar-ring: 186 70% 62%;
+
+    --chart-1: 186 70% 62%;
+    --chart-2: 187 70% 50%;
+    --chart-3: 186 60% 55%;
+    --chart-4: 187 60% 45%;
+    --chart-5: 190 50% 50%;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground font-body;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-headline;
+  }
 }
